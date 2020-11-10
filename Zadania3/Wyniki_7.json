@@ -1,0 +1,11 @@
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017/nbd
+Implicit session: session { "id" : UUID("c9b3d301-cd17-4955-bc96-9b0d2c51807f") }
+MongoDB server version: 3.6.8
+2020-11-10T19:08:51.444+0100 E QUERY    [thread1] SyntaxError: invalid property id @Zapytanie_7.js:1:39
+failed to load: Zapytanie_7.js
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017/nbd
+Implicit session: session { "id" : UUID("ec859583-46bf-4aa2-8f96-b32c5c11cacb") }
+MongoDB server version: 3.6.8
+{ "nRemoved" : 123 }

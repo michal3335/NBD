@@ -1,0 +1,1 @@
+printjson(db.people.aggregate([{$match:{$and:[{"sex":"Female"},{"nationality":"Poland"}]}},{$unwind:"$credit"},{$group:{_id:"$credit.currency",suma_srodkow:{$sum:"$credit.balance"},srednia:{$avg:"$credit.balance"}}}]).toArray())

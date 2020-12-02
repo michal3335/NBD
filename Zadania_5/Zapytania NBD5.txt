@@ -1,0 +1,49 @@
+1.Wszystkie filmy
+MATCH(x:Movie)RETURN x
+
+2.Wszystkie filmy, w których grał Hugo Weaving 
+MATCH(a:Person{name:"Hugo Weaving"})-[:ACTED_IN]->(hugoMovies) RETURN a, hugoMovies
+
+3.Reżyserzy filmów, w których grał Hugo Weaving 
+MATCH (p:Person {name: "Hugo Weaving"})-[:ACTED_IN]->(hugoMovies)<-[:DIRECTED]-(directors) return distinct directors
+
+4.Wszystkie osoby, z którymi Hugo Weaving grał w tych samych filmach 
+MATCH (p:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(movie)<-[:ACTED_IN]-(actors) RETURN actors
+
+5.Wszystkie filmy osób, które grały w Matrix
+MATCH (matrix {title: "The Matrix"}) <-[:ACTED_IN]-(actors)-[:ACTED_IN]->(movies) return distinct movies
+
+6.Listę aktorów (aktor = osoba, która grała przynajmniej w jednym filmie) wraz z ilością filmów, w których grali 
+MATCH(n:Person)-[a:ACTED_IN]-(m) WITH n ,count(a) as movies WHERE movies >=1 return n,movies
+
+7.Listę osób, które napisały scenariusz filmu, które wyreżyserowały wraz z tytułami takich filmów (koniunkcja – ten sam autor scenariusza i reżyser) 
+MATCH (n)-[:WROTE]->(m)<-[:DIRECTED]-(n) RETURN n, m
+
+8.Listę filmów, w których grał zarówno Hugo Weaving jak i Keanu Reeves 
+MATCH(p:Person)-[r:ACTED_IN ]-(m) WHERE p.name='Hugo Weaving' WITH m as movies MATCH (movies)-[r:ACTED_IN]-(m:Person) WHERE m.name='Keanu Reeves' return movies
+
+9.Zestaw zapytań powodujących uzupełnienie bazy danych o film Captain America: The First Avenger wraz z uzupełnieniem informacji o reżyserze, scenarzystach i odtwórcach głównych ról (w oparciu o skrócone informacje z IMDB - http://www.imdb.com/title/tt0458339/) + zapytanie pokazujące dodany do bazy film wraz odtwórcami głównych ról, scenarzystą i reżyserem. Plik SVG ma pokazywać wynik ostatniego zapytania.  
+
+CREATE (m:Movie {title:'Captain America: The First Avenger', released:2011})
+CREATE (n:Person { name: 'Joe Johnston', born: 1950 })
+CREATE (ChrisEvans: Person{name:"Chris Evans", born:1981})
+CREATE (HayleyAtwell: Person{name:"Hayley Atwell", born:1982})
+CREATE (StephenMcFeely: Person{name:"Stephen McFeely", born:1969})
+CREATE (ChristopherMarkus: Person{name:"Christopher Markus", born:1970})
+
+
+MATCH (p:Person {name:'Joe Johnston'}), (m:Movie {title:'Captain America: The First Avenger'})
+CREATE (p)-[:DIRECTED]->(m)
+MATCH (p:Person {name:'Chris Evans'}), (m:Movie {title:'Captain America: The First Avenger'})
+CREATE (p)-[:ACTED_IN {roles:['Captain America','Steve Rogers']}]->(m)
+MATCH (p:Person {name:'Hugo Weaving'}), (m:Movie {title:'Captain America: The First Avenger'})
+CREATE (p)-[:ACTED_IN {roles:['Johann Schmidt','Red Skull']}]->(m)
+MATCH (p:Person {name:'Hayley Atwell'}), (m:Movie {title:'Captain America: The First Avenger'})
+CREATE (p)-[:ACTED_IN {roles:['Peggy Carter']}]->(m)
+MATCH (p:Person {name:'Christopher Markus'}), (m:Movie {title:'Captain America: The First Avenger'})
+CREATE (p)-[:WROTE]->(m)
+MATCH (p:Person {name:'Stephen McFeely'}), (m:Movie {title:'Captain America: The First Avenger'})
+CREATE (p)-[:WROTE]->(m)
+
+Zapytanie:
+MATCH (p:Person)-[rel]-(m {title: "Captain America: The First Avenger"}) RETURN p, m, Type(rel), rel

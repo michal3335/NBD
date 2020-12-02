@@ -1,0 +1,202 @@
+﻿[
+  {
+    "p": {
+"identity": 175,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Stephen McFeely",
+"born": 1969
+      }
+    },
+    "m": {
+"identity": 171,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"title": "Captain America: The First Avenger",
+"released": 2011
+      }
+    },
+    "Type(rel)": "WROTE",
+    "rel": {
+"identity": 258,
+"start": 175,
+"end": 171,
+"type": "WROTE",
+"properties": {
+
+      }
+    }
+  },
+  {
+    "p": {
+"identity": 176,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Christopher Markus",
+"born": 1970
+      }
+    },
+    "m": {
+"identity": 171,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"title": "Captain America: The First Avenger",
+"released": 2011
+      }
+    },
+    "Type(rel)": "WROTE",
+    "rel": {
+"identity": 257,
+"start": 176,
+"end": 171,
+"type": "WROTE",
+"properties": {
+
+      }
+    }
+  },
+  {
+    "p": {
+"identity": 174,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Hayley Atwell",
+"born": 1982
+      }
+    },
+    "m": {
+"identity": 171,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"title": "Captain America: The First Avenger",
+"released": 2011
+      }
+    },
+    "Type(rel)": "ACTED_IN",
+    "rel": {
+"identity": 256,
+"start": 174,
+"end": 171,
+"type": "ACTED_IN",
+"properties": {
+"roles": [
+          "Peggy Carter"
+        ]
+      }
+    }
+  },
+  {
+    "p": {
+"identity": 4,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Hugo Weaving",
+"born": 1960
+      }
+    },
+    "m": {
+"identity": 171,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"title": "Captain America: The First Avenger",
+"released": 2011
+      }
+    },
+    "Type(rel)": "ACTED_IN",
+    "rel": {
+"identity": 255,
+"start": 4,
+"end": 171,
+"type": "ACTED_IN",
+"properties": {
+"roles": [
+          "Johann Schmidt",
+          "Red Skull"
+        ]
+      }
+    }
+  },
+  {
+    "p": {
+"identity": 173,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Chris Evans",
+"born": 1981
+      }
+    },
+    "m": {
+"identity": 171,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"title": "Captain America: The First Avenger",
+"released": 2011
+      }
+    },
+    "Type(rel)": "ACTED_IN",
+    "rel": {
+"identity": 254,
+"start": 173,
+"end": 171,
+"type": "ACTED_IN",
+"properties": {
+"roles": [
+          "Captain America",
+          "Steve Rogers"
+        ]
+      }
+    }
+  },
+  {
+    "p": {
+"identity": 172,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Joe Johnston",
+"born": 1950
+      }
+    },
+    "m": {
+"identity": 171,
+"labels": [
+        "Movie"
+      ],
+"properties": {
+"title": "Captain America: The First Avenger",
+"released": 2011
+      }
+    },
+    "Type(rel)": "DIRECTED",
+    "rel": {
+"identity": 253,
+"start": 172,
+"end": 171,
+"type": "DIRECTED",
+"properties": {
+
+      }
+    }
+  }
+]

@@ -1,0 +1,43 @@
+1.
+curl -XPUT -H "Content-Type: application/json" -d '{"brand": "BMW:, "type": "car", "horsepower": "320", "color" : "blue"}' http://localhost:8098/buckets/s15262/keys/bmw
+curl -XPUT -H "Content-Type: application/json" -d '{"brand": "Mercedes:, "type": "car", "horsepower": "430", "color" : "black"}' http://localhost:8098/buckets/s15262/keys/mercedes
+curl -XPUT -H "Content-Type: application/json" -d '{"brand": "Toyota:, "type": "car", "horsepower": "150", "color" : "orange"}' http://localhost:8098/buckets/s15262/keys/toyota
+curl -XPUT -H "Content-Type: application/json" -d '{"brand": "Tesla:, "type": "car", "horsepower": "350", "color" : "green"}' http://localhost:8098/buckets/s15262/keys/tesla
+curl -XPUT -H "Content-Type: application/json" -d '{"brand": "Jeep:, "type": "car", "horsepower": "180", "color" : "yellow"}' http://localhost:8098/buckets/s15262/keys/jeep
+
+2.
+
+curl -i http://localhost:8098/buckets/s15262/keys/mercedes
+
+3. dodanie modelu
+
+curl -XPUT -H "Content-Type: application/json" -d '{"brand": "BMW", "model": "M4", "type": "car", "horsepower": "320", "color" : "blue"}' http://localhost:8098/buckets/s15262/keys/bmw
+
+4.
+
+curl  -XPUT -H "Content-Type: application/json" -d '{"brand": "BMW", "model": "M4", "type": "car", "horsepower": "320"}' http://localhost:8098/buckets/s15262/keys/bmw
+
+5.
+curl  -XPUT -H "Content-Type: application/json" -d '{"brand": "BMW", "model": "M4", "type": "car", "horsepower": "550"}' http://localhost:8098/buckets/s15262/keys/bmw
+
+6.
+curl  -XDELETE http://localhost:8098/buckets/s15262/keys/bmw
+
+7.
+curl -i http://localhost:8098/buckets/s15262/keys/fiat
+
+8.
+
+curl -XPOST -H "Content-Type: application/json" -d '{"brand":"Lexus"}' http://localhost:8098/buckets/s15262/keys
+curl -i http://localhost:8098/buckets/s15262/keys?keys=true
+
+9.
+
+curl -i http://localhost:8098/buckets/s15262/keys/KGkRXLwQFzqHRWgkGSfesYAJM45
+
+10.
+
+curl  -XDELETE http://localhost:8098/buckets/s15262/keys/KGkRXLwQFzqHRWgkGSfesYAJM45
+
+
+

@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fsaEO11hYGxbmMGUyJjHyjDtntdNviwA
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+Link: </buckets/s15262>; rel="up"
+Last-Modified: Sun, 13 Dec 2020 18:51:02 GMT
+ETag: "7WGgjfdjuF7jf6xVbLJ3a4"
+Date: Sun, 13 Dec 2020 18:57:46 GMT
+Content-Type: application/json
+Content-Length: 17
+
+{"brand":"Lexus"}

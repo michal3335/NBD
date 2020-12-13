@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fsYkLZnFwNi2MIMpkTGPlcH4qtdNviwA
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+Link: </buckets/s15262>; rel="up"
+Last-Modified: Sun, 13 Dec 2020 18:10:59 GMT
+ETag: "4qmmp8coZJj88MMqdCrjFA"
+Date: Sun, 13 Dec 2020 18:12:04 GMT
+Content-Type: application/json
+Content-Length: 76
+
+{"brand": "Mercedes:, "type": "car", "horsepower": "430", "color" : "black"}
